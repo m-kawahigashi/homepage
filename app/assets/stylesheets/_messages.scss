@@ -1,0 +1,56 @@
+// Place all the styles related to the messages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+* {
+  color: black;
+  padding: 0;
+  font-size: 15px;
+  line-height: 140%;
+  margin: 0;
+}
+
+.div {
+  display: block;
+}
+
+body {
+  background-image: url("tree.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.header {
+  // width: 800px;
+  // margin-right: auto;
+  // margin-left: auto;
+  // background-image: url();
+  text-align: center;
+  height: 90px;
+  box-sizing: border-box;
+  background-color: lightgrey;
+}
+
+.main {
+  width: 800px;
+  height: 880px;
+  float: right;
+  margin-right: 20%;
+  // margin-left: auto;
+  margin-top: 0px;
+  border-right-width: 1px;
+  border-left-width: 1px;
+  border-right-style: solid;
+  border-left-style: solid;
+  background-color: white;
+  overflow: scroll;
+}
+
+.footer {
+  clear: both;
+  border: 1px solid gray;
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: lightgrey;
+  z-index: 3;
+}

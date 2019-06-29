@@ -1,0 +1,68 @@
+.wrapper {
+  float: left;
+  padding: 5px;
+  margin-top: 5px;
+  height: 870px;
+}
+
+.contents {
+  width: 610px;
+  float: right;
+  height: 875px;
+}
+
+.search {
+  margin-top: 10px;
+  display: flex;
+  margin-left: 10px;
+    &__input{
+      height: 30px;
+      width: 50%;
+    }
+    &__btn{
+      height: 30px;
+      width: 100px;
+      margin-left: 10px;
+    }
+}
+
+.content {
+  padding-top: 5px;
+  padding-right: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+    p {
+      height: 100px;
+    }
+    &__box {
+      float: left;
+      height: 760px;
+      width: 750px;
+      // border: 1px solid grey;
+      margin: 5px;
+      padding: 5px;
+    }
+      &__box-image{
+        height: 150px;
+        border: 1px solid grey;
+        padding: 10px;
+        margin-bottom: 15px;
+      }
+      &__box-images{
+        float: left;
+        height: 140px;
+        width: 140px;
+        border: 1px solid grey;
+        background-size: cover;
+          span {
+            float: right;
+          }
+      }
+    &__box-btn{
+      width: 100px;
+      border: 1px solid grey;
+      float: right;
+      font-size: 10px;
+      text-align: center;
+    }
+}

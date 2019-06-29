@@ -1,0 +1,25 @@
+.sidebar {
+  float: left;
+  width: 300px;
+  background-color: aquamarine;
+  // margin-top: 5px;
+  margin-left: 50px;
+  height: 300px;
+  box-sizing: border-box;
+    &__box {
+      margin-top: 2px;
+      margin-bottom: 5px;
+      width: 160px;
+      margin-right: auto;
+      margin-top: 5px;
+      margin-left: auto;
+      // border: 1px solid burlywood;
+      height: 190px;
+    }
+    h3{
+      font-size: 20px;
+    }
+    ul{
+      list-style: none;
+    }
+}

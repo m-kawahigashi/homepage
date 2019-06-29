@@ -1,0 +1,28 @@
+%body
+  .header
+    %h1 Sample
+  .main
+    .wrapper
+      .contents
+        .content
+          %h2 投稿一覧
+          .search
+            %input.search__input{name: "keyword", placeholder: "投稿記事を検索", type: "text", value: ""}
+            %button.search__btn{type: "submit", title: "検索", type: "hidden"} 検索
+          .content__box
+            - @messages.each do |message|
+              .content__box-image
+                .content__box-images{:style => "background-image: url(#{message.image});"}
+                %span.name= message.name
+                = simple_format(message.text)
+                .content__box-btn もっと読む
+                -# = link_to do
+  .sidebar
+    .sidebar__box 
+      %h3 サイドメニュー 
+      %ul
+        %li ログイン
+        %li 新規登録
+        %li 投稿する
+        %li ログアウト
+  .footer
