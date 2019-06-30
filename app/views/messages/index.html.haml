@@ -17,6 +17,7 @@
                 = simple_format(message.text)
                 .content__box-btn もっと読む
                 -# = link_to do
+          = paginate(@messages)
   .sidebar
     .sidebar__box 
       %h3 サイドメニュー 

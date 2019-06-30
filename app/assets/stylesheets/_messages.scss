@@ -29,6 +29,8 @@ body {
   height: 90px;
   box-sizing: border-box;
   background-color: lightgrey;
+  position: fixed;
+  width: 100%;
 }
 
 .main {
@@ -37,7 +39,7 @@ body {
   float: right;
   margin-right: 20%;
   // margin-left: auto;
-  margin-top: 0px;
+  margin-top: 90px;
   border-right-width: 1px;
   border-left-width: 1px;
   border-right-style: solid;
