@@ -1,4 +1,5 @@
 class MessagesController < ApplicationController
+  before_action :move_to_index, except: :index
 
   def index
     @messages = Message.page(params[:page]).per(4).order("created_at DESC")
@@ -8,7 +9,7 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @messages = Message.create(message_params)
+    Message.create(name: message_params[:name], image: message_params[:image], text: message_params[:text], user_id: current_user.id)
   end
 
   private
@@ -16,4 +17,7 @@ class MessagesController < ApplicationController
     params.permit(:name, :image, :text)
   end
 
+  def move_to_index
+    redirect_to action: :index unless user_signed_in?
+  end
 end
