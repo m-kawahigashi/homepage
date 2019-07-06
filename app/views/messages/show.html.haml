@@ -1,0 +1,11 @@
+.contents.row
+  .content
+    %h2 投稿一覧
+    .content__box
+      .content__box-image
+        .content__box-images{:style => "background-image: url(#{@message.image});"}
+        - if user_signed_in? && current_user.id == @message.user.id
+          = link_to '編集', "/messages/#{@message.id}/edit", method: :get
+          = link_to '削除', "/messages/#{@message.id}", method: :delete
+        = simple_format(@message.text)
+      = link_to '一覧に戻る', "/messages"

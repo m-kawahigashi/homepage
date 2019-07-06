@@ -1,0 +1,6 @@
+.contents.row
+  = form_for(@message) do |f|
+    %h3 編集する
+    = f.text_field :image, placeholder: 'Image Url', type: 'text', value: "#{@message.image}"
+    = f.text_area :text, cols: '30', placeholder: 'text', value: "#{@message.text}", rows: '10'
+    = f.submit 'Send', method: 'patch'
