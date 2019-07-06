@@ -12,8 +12,12 @@
           .content__box
             - @messages.each do |message|
               .content__box-image
-                .content__box-images{:style => "background-image: url(#{message.image});"}
-                %span.name= message.name
+                .content__box-images{style: "background-image: url(#{message.image});"}
+                %span= "投稿者 #{message.user.nickname}"
+                = link_to '詳細を見る', "/messages/#{message.id}", method: :get
+                - if user_signed_in? && current_user.id == message.user_id
+                  = link_to '編集', "messages/#{message.id}/edit", method: :get
+                  = link_to '削除', "/messages/#{message.id}", method: :delete
                 = simple_format(message.text)
                 .content__box-btn もっと読む
                 -# = link_to do
@@ -25,7 +29,7 @@
       - if user_signed_in?
         %span= link_to current_user.nickname,"/users/current_user.id"
         %li= link_to"投稿する", "/messages/new"
-        %li= link_to "ログアウト", destroy_user_session_path, metod: :delete
+        %li= link_to "ログアウト", destroy_user_session_path, method: :delete
       - else
         %li= link_to "ログイン", new_user_session_path, class: 'post'
         %li= link_to "新規登録", new_user_registration_path, class: 'post'

@@ -14,7 +14,8 @@
             - @messages.each do |message|
               .content__box-image
                 .content__box-images{:style => "background-image: url(#{message.image});"}
-                %span.name= message.name
+                = link_to '編集', "/messages/#{message.id}/edit", method: :get
+                = link_to '削除', "/messages/#{message.id}", method: :delete
                 = simple_format(message.text)
                 .content__box-btn もっと読む
                 -# = link_to do
