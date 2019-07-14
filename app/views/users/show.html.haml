@@ -17,6 +17,6 @@
                 = link_to '編集', "/messages/#{message.id}/edit", method: :get
                 = link_to '削除', "/messages/#{message.id}", method: :delete
                 = simple_format(message.text)
-                .content__box-btn もっと読む
-                -# = link_to do
+                .content__box-btn= link_to '詳細', "/messages/#{message.id}", method: :get
           = paginate(@messages)
+          = link_to 'トップページ', "/messages/"

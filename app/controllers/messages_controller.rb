@@ -6,6 +6,7 @@ class MessagesController < ApplicationController
   end
 
   def new
+    @message = Message.new
   end
 
   def create
@@ -24,7 +25,9 @@ class MessagesController < ApplicationController
   end
 
   def show
-    @message = Message.find(params[:id])
+    @message = Comment.new
+    @messages = Message.find(params[:id])
+    @comments = @messages.comments.includes(:user)
   end
 
   def destroy
