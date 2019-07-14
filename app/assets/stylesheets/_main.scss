@@ -3,10 +3,11 @@
   padding: 5px;
   margin-top: 5px;
   height: 870px;
+  width: 90%;
 }
 
 .contents {
-  width: 610px;
+  width: 100%;
   float: right;
   height: 875px;
 }
@@ -32,12 +33,12 @@
   padding-bottom: 5px;
   padding-left: 10px;
     p {
-      height: 100px;
+      height: 40px;
     }
     &__box {
       float: left;
       height: 730px;
-      width: 750px;
+      width: 100%;
       // border: 1px solid grey;
       margin: 5px;
       padding: 5px;
@@ -47,6 +48,7 @@
         border: 1px solid grey;
         padding: 10px;
         margin-bottom: 15px;
+        width: 90%;
       }
       &__box-images{
         float: left;
@@ -64,5 +66,15 @@
       float: right;
       font-size: 10px;
       text-align: center;
+      margin-top: 70px;
     }
+}
+
+.comments {
+  color: white;
+}
+.comment{
+  height: 250px;
+  border: 1px solid black;
+  width: 98%;
 }

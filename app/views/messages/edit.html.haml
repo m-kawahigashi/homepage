@@ -4,3 +4,4 @@
     = f.text_field :image, placeholder: 'Image Url', type: 'text', value: "#{@message.image}"
     = f.text_area :text, cols: '30', placeholder: 'text', value: "#{@message.text}", rows: '10'
     = f.submit 'Send', method: 'patch'
+    = link_to '戻る', "/messages/"

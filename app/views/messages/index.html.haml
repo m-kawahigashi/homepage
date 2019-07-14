@@ -14,13 +14,12 @@
               .content__box-image
                 .content__box-images{style: "background-image: url(#{message.image});"}
                 %span= "投稿者 #{message.user.nickname}"
-                = link_to '詳細を見る', "/messages/#{message.id}", method: :get
+                -# = link_to 'コメントする', "/messages/#{message.id}", method: :get
                 - if user_signed_in? && current_user.id == message.user_id
                   = link_to '編集', "messages/#{message.id}/edit", method: :get
                   = link_to '削除', "/messages/#{message.id}", method: :delete
                 = simple_format(message.text)
-                .content__box-btn もっと読む
-                -# = link_to do
+                .content__box-btn= link_to '詳細', "/messages/#{message.id}", method: :get
           = paginate(@messages)
   .sidebar
     .sidebar__box 

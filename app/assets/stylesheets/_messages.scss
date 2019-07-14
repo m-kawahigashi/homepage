@@ -35,11 +35,10 @@ body {
 }
 
 .main {
-  width: 800px;
-  height: 880px;
-  float: right;
+  width: 59%;
+  height: 100%;
   margin-right: 20%;
-  margin-left: 350px;
+  margin-left: 20%;
   margin-top: 90px;
   border-right-width: 1px;
   border-left-width: 1px;
@@ -56,5 +55,5 @@ body {
   padding: 10px;
   box-sizing: border-box;
   background-color: lightgrey;
-  z-index: 3;
+  z-index: 1;
 }

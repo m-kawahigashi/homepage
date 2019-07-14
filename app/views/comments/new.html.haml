@@ -10,7 +10,7 @@
         = simple_format(@messages.text)
       .container
         - if current_user
-          = form_for(@message, url: "/messages/#{@messages.id}/comments", html: {method: 'post'}) do |f|
+          = form_for([@message,@comment] url: "/messages/#{@messages.id}/comments", html: {method: 'post'}) do |f|
             = f.text_area :text, cols: '30', rows: '7', placeholder: 'コメントする'
             = f.submit 'Sent'
             = link_to '戻る', "/messages"

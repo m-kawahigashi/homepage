@@ -8,8 +8,9 @@
 }
 form {
   height: 800px;
-  width: 300px;
-  margin-left: 250px;
+  width: min-content;
+  margin-left: auto;
+  margin-right: auto;
     input{
       margin-top: 10px;
       margin-bottom: 15px;
@@ -22,3 +23,15 @@ form {
     }
 }
 
+.contents.rows{
+  background-color: white;
+  width: 59%;
+  margin-right: 20%;
+  height: 100%;
+  margin-top: 100px;
+  margin-left: 30%;
+}
+.container{
+  height: 250px;
+
+}
