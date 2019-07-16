@@ -26,12 +26,16 @@ body {
   // margin-left: auto;
   // background-image: url();
   text-align: center;
+  display: flex;
   height: 90px;
   box-sizing: border-box;
   background-color: lightgrey;
   position: fixed;
   width: 100%;
   z-index: 5;
+    &__icon{
+      width: 10%;
+    }
 }
 
 .main {
