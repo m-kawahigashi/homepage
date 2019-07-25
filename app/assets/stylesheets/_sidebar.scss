@@ -1,17 +1,18 @@
 .sidebar {
   float: left;
   width: 20%;
-  background-color: aquamarine;
+  text-align: center;
+  background-color: lightgrey;
   margin-top: 90px;
   // margin-left: 50px;
-  height: 300px;
+  height: 200px;
   box-sizing: border-box;
   position: fixed;
-  z-index: 2;
+  z-index: 10;
     &__box {
       margin-top: 2px;
       margin-bottom: 5px;
-      width: 160px;
+      width: 140px;
       margin-right: auto;
       margin-top: 5px;
       margin-left: auto;
@@ -24,9 +25,12 @@
     ul{
       list-style: none;
     }
-    
+    span{
+      font-size: 25px;
+    }
     li{
       list-style: none;
+      font-size: 25px;
     }
 
     a{
