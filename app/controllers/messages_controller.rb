@@ -3,10 +3,11 @@ class MessagesController < ApplicationController
 
   def index
     @messages = Message.includes(:user).page(params[:page]).per(4).order("created_at DESC")
-      # respond_to do |format|
-      #   format.html
-      #   format.json
-      # end
+    @message = Message.where('text LIKE(?)', "%#{params[:keyword]}%").order("created_at DESC").limit(4)
+      respond_to do |format|
+        format.html
+        format.json
+      end
   end
 
   def new
