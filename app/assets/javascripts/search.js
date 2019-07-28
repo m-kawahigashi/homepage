@@ -1,9 +1,9 @@
 $(document).on('turbolinks:load', function(){
   var message_search = $('.content__box')
-  
+  var image = image ? `<img src= ${ image }>` : "";
   function appendUser(message){
   var HTML = `<div class="content__box-image">
-                <div class="content__box-images style="background-image: url(${message.image});">
+                <div class="content__box-images style="background-image: (${image});">
                 </div>
                 <span>投稿者 ${message.name}</span>
                 <a data-method="get" href="messages/${message.id}/edit">編集</a>
