@@ -16,6 +16,10 @@ class MessagesController < ApplicationController
 
   def create
     Message.create(image: message_params[:image], text: message_params[:text], user_id: current_user.id)
+    respond_to do |format|
+      format.html { redirect_to "/messages" }
+      format.json 
+    end
   end
 
   def edit
