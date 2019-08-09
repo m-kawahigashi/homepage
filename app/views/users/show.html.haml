@@ -1,6 +1,6 @@
 %body
   .header
-    %h1 
+    %h1.header-nickname
       = @nickname
   .main
     .wrapper
@@ -19,4 +19,4 @@
                 = simple_format(message.text)
                 .content__box-btn= link_to '詳細', "/messages/#{message.id}", method: :get
           = paginate(@messages)
-          = link_to 'トップページ', "/messages/"
+          = link_to '戻る', "/messages/"
