@@ -8,30 +8,49 @@
     .wrapper
       .contents
         .content
+          .contents.row.none#format
+            = form_for [@toukou], html: {class: 'new-message'} do |f|
+              %h3
+                投稿する
+              = f.text_field :image, placeholder: "Image Url", type: "text"
+              = f.text_area :text, cols: "30", rows: "10", placeholder: "text"
+              = f.submit "Send", class: "form-btn-new"
+              .back 戻る
           %h2 投稿一覧
           .search
             %input.search__input{name: "keyword", placeholder: "投稿記事を検索", type: "text", value: ""}
             %button.search__btn{type: "submit", title: "検索", type: "hidden"} 検索
           .content__box
             - @messages.each do |message|
-              .content__box-image
+              .content__box-image{"data-message-id": "#{message.id}"}
                 .content__box-images{style: "background-image: url(#{message.image});"}
                 %span= "投稿者 #{message.user.nickname}"
                 -# = link_to 'コメントする', "/messages/#{message.id}", method: :get
                 - if user_signed_in? && current_user.id == message.user_id
-                  = link_to '編集', "messages/#{message.id}/edit", method: :get
-                  = link_to '削除', "/messages/#{message.id}", method: :delete
-                = simple_format(message.text)
-                .content__box-btn= link_to '詳細', "/messages/#{message.id}", method: :get
-          = paginate(@messages)
+                  .content__box-images__btns
+                    #edit.content__box-images__btns--edit-btn= link_to '編集', edit_message_path(message.id), method: :get
+                    #delete.content__box-images__btns--delete-btn= link_to '削除', "/messages/#{message.id}", method: :delete, data: { confirm: '削除しますか？' }
+                .content__box-image--text
+                  = simple_format(message.text)
+                .content__box-btn= link_to '詳細', message_path(message.id), method: :get
+              .comments.none
+                %h4 コメント一覧
+                .comment
+                  -if @comments
+                    - @comments.each do |comment|
+                      %p
+                        %string= link_to current_user.nickname, "/users/#{comment.user_id}"
+                        = comment.text
+          -# = paginate(@messages)
   .sidebar
     .sidebar__box 
       %h3 サイドメニュー 
       %ul
       - if user_signed_in?
         %span= link_to current_user.nickname,"/users/current_user.id"
-        %li= link_to"投稿する", "/messages/new"
+        %li.sidebar__box--btn 投稿する
         %li= link_to "ログアウト", destroy_user_session_path, method: :delete
+        %li.sidebar__box--search-form 検索する
       - else
         %li= link_to "ログイン", new_user_session_path, class: 'post'
         %li= link_to "新規登録", new_user_registration_path, class: 'post'

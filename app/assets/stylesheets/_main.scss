@@ -3,13 +3,19 @@
   padding: 5px;
   margin-top: 5px;
   height: 870px;
-  width: 90%;
+  width: 100%;
 }
 
 .contents {
   width: 100%;
   float: right;
   height: 875px;
+}
+.none{
+  display: none;
+  z-index: 5;
+  position: relative;
+  left: 30%;
 }
 
 .search {
@@ -49,6 +55,9 @@
         padding: 10px;
         margin-bottom: 15px;
         width: 91%;
+        &--text{
+          height: 90px;
+        }
       }
       &__box-images{
         float: left;
@@ -57,17 +66,39 @@
         border: 1px solid grey;
         background-size: cover;
         background-position: center;
-          span {
-            float: right;
+        span {
+          float: right;
+        }
+        &__btns{
+          display: flex;
+          float: right;
+          &--edit-btn{
+            border: 1px solid grey;
+            margin-right: 5px;
+            &:hover{
+              opacity: 0.7;
+            }
           }
+          &--delete-btn{
+            border: 1px solid grey;
+            margin-right: 5px;
+            &:hover{
+              opacity: 0.7;
+            }
+          }
+        }
       }
     &__box-btn{
+      position: relative;
       width: 70px;
       border: 1px solid grey;
       float: right;
       font-size: 10px;
       text-align: center;
-      margin-top: 10%;
+      top: 15px;
+      &:hover{
+        opacity: 0.7;
+      }
     }
 }
 
@@ -75,7 +106,9 @@
   color: white;
 }
 .comment{
+  position: relative;
   height: 250px;
   border: 1px solid black;
-  width: 98%;
+  width: 90%;
+  left: 25px;
 }
