@@ -18,6 +18,19 @@
       margin-left: auto;
       // border: 1px solid burlywood;
       height: 190px;
+      &--btn{
+        font-size: 15px;
+        cursor: pointer;
+        &:hover{
+          opacity: 0.6;
+        }
+      }
+      &--search-form{
+        cursor: pointer;
+        &:hover{
+          opacity: 0.6;
+        }
+      }
     }
     h3{
       font-size: 20px;
@@ -30,10 +43,13 @@
     }
     li{
       list-style: none;
-      font-size: 25px;
+      padding: 10px;
     }
 
     a{
       text-decoration: none;
+      &:hover{
+        opacity: 0.6;
+      }
     }
 }

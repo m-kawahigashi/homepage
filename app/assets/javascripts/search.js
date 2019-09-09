@@ -1,21 +1,25 @@
 $(document).on('turbolinks:load', function(){
   var message_search = $('.content__box')
-  var image = image ? `<img src= ${ image }>` : "";
   function appendUser(message){
-  var HTML = `<div class="content__box-image">
-                <div class="content__box-images style="background-image: ${image};">
-                </div>
-                <span>投稿者 ${message.name}</span>
-                <a data-method="get" href="messages/${message.id}/edit">編集</a>
-                <a rel="nofollow" data-method="delete" href='messages/${message.id}'>削除</a>
-                <p>${message.text}</p>
-                <div class='content__box-btn'>
-                  <a data-method="get" href="/messages/${message.id}>
-                </div>
-                <div class="content__box-btn">
-                  <a data-method="get" href="/messages/${message.id}">詳細</a>
-                </div>
-              </div>`
+    var image = message.image ? `${ message.image }`: "";
+    var HTML = `<div class="content__box-image" data-message-id=${message.id}>
+                  <div class="content__box-images" style="background-image: url(${image});"></div>
+                  <span>投稿者 ${message.name}</span>
+                  <div class="content__box-images__btns">
+                    <div class="content__box-images__btns--edit-btn" id="edit">
+                      <a data-method="get" href="messages/${message.id}/edit">編集</a>
+                    </div>
+                    <div class="content__box-images__btns--delete-btn" id="delete">
+                      <a data-confirm="削除しますか？" rel="nofollow" data-method="delete" href='messages/${message.id}'>削除</a>
+                    </div>
+                  </div>
+                  <div class="content__box-image--text">
+                    <p>${message.text}</p>
+                  </divs>
+                  <div class="content__box-btn">
+                    <a data-method="get" href="/messages/${message.id}">詳細</a>
+                  </div>
+                </div>`
   message_search.append(HTML);
   return HTML;
   }
