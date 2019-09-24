@@ -1,4 +1,5 @@
 $(document).on('turbolinks:load', function(){
+  // 投稿の非同期の際にapend、またはprependするHTMLを定義。
   function buildHTML(message){
     var text = message.text ? `${ message.text }` : "";
     var image = message.image ? `${ message.image }` : "";
@@ -22,7 +23,8 @@ $(document).on('turbolinks:load', function(){
                 </div>`;
     return html;
   }
- 
+
+ // 投稿の非同期通信を実装
   $('.new-message').on("submit", function(e){
     e.preventDefault();
     var formData = new FormData(this);
@@ -46,4 +48,9 @@ $(document).on('turbolinks:load', function(){
       $('.form-btn-new').prop('disabled', false);
     })
   })
+
+  // 削除の非同期通信
+  // $(document).on('click', '#delete', function(){
+  //   alert('削除しますか？')
+  // })
 })
