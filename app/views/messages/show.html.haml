@@ -5,8 +5,8 @@
       .content__box-image
         .content__box-images{:style => "background-image: url(#{@messages.image});"}
         - if user_signed_in? && current_user.id == @messages.user.id
-          = link_to '編集', "/messages/#{@messages.id}/edit", method: :get
-          = link_to '削除', "/messages/#{@messages.id}", method: :delete
+          #edit= link_to '編集', "/messages/#{@messages.id}/edit", method: :get
+          #delete= link_to '削除', "/messages/#{@messages.id}", method: :delete, data: { confirm: '本当に削除しますか？' }
         = simple_format(@messages.text)
       .container
         - if current_user
