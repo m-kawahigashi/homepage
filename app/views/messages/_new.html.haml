@@ -1,0 +1,8 @@
+.contents.row.none#format
+  = form_for [@toukou], html: {class: 'new-message'} do |f|
+    %h3
+      投稿する
+    = f.text_field :image, placeholder: "Image Url", type: "text"
+    = f.text_area :text, cols: "30", rows: "10", placeholder: "text"
+    = f.submit "Send", class: "form-btn-new"
+    .back 戻る

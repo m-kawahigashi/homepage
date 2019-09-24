@@ -8,31 +8,14 @@
     .wrapper
       .contents
         .content
-          .contents.row.none#format
-            = form_for [@toukou], html: {class: 'new-message'} do |f|
-              %h3
-                投稿する
-              = f.text_field :image, placeholder: "Image Url", type: "text"
-              = f.text_area :text, cols: "30", rows: "10", placeholder: "text"
-              = f.submit "Send", class: "form-btn-new"
-              .back 戻る
+          = render 'new'
           %h2 投稿一覧
           .search
             %input.search__input{name: "keyword", placeholder: "投稿記事を検索", type: "text", value: ""}
             %button.search__btn{type: "submit", title: "検索", type: "hidden"} 検索
           .content__box
             - @messages.each do |message|
-              .content__box-image{"data-message-id": "#{message.id}"}
-                .content__box-images{style: "background-image: url(#{message.image});"}
-                %span= "投稿者 #{message.user.nickname}"
-                -# = link_to 'コメントする', "/messages/#{message.id}", method: :get
-                - if user_signed_in? && current_user.id == message.user_id
-                  .content__box-images__btns
-                    #edit.content__box-images__btns--edit-btn= link_to '編集', edit_message_path(message.id), method: :get
-                    #delete.content__box-images__btns--delete-btn= link_to '削除', "/messages/#{message.id}", method: :delete, data: { confirm: '削除しますか？' }
-                .content__box-image--text
-                  = simple_format(message.text)
-                .content__box-btn= link_to '詳細', message_path(message.id), method: :get
+              = render partial: 'posts-list', locals: {message: message}
               .comments.none
                 %h4 コメント一覧
                 .comment

@@ -12,11 +12,6 @@
             %button.search__btn{type: "submit", title: "検索", type: "hidden"} 検索
           .content__box
             - @messages.each do |message|
-              .content__box-image
-                .content__box-images{:style => "background-image: url(#{message.image});"}
-                = link_to '編集', "/messages/#{message.id}/edit", method: :get
-                = link_to '削除', "/messages/#{message.id}", method: :delete
-                = simple_format(message.text)
-                .content__box-btn= link_to '詳細', "/messages/#{message.id}", method: :get
+              =render partial: 'messages/posts-list', locals: {message: message}
           = paginate(@messages)
           = link_to '戻る', "/messages/"

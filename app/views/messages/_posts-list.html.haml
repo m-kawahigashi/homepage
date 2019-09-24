@@ -1,0 +1,10 @@
+.content__box-image{"data-message-id": "#{message.id}"}
+  .content__box-images{style: "background-image: url(#{message.image});"}
+  %span= "投稿者 #{message.user.nickname}"
+  - if user_signed_in? && current_user.id == message.user_id
+    .content__box-images__btns
+      #edit.content__box-images__btns--edit-btn= link_to '編集', edit_message_path(message.id), method: :get
+      #delete.content__box-images__btns--delete-btn= link_to '削除', "/messages/#{message.id}", method: :delete, data: { confirm: '本当に削除しますか？' }
+  .content__box-image--text
+    = simple_format(message.text)
+  .content__box-btn= link_to '詳細', message_path(message.id), method: :get
