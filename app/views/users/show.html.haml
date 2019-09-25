@@ -11,7 +11,10 @@
             %input.search__input{name: "keyword", placeholder: "投稿記事を検索", type: "text", value: ""}
             %button.search__btn{type: "submit", title: "検索", type: "hidden"} 検索
           .content__box
-            - @messages.each do |message|
-              =render partial: 'messages/posts-list', locals: {message: message}
+            - if @messages.present?
+              - @messages.each do |message|
+                =render partial: 'messages/posts-list', locals: {message: message}
+            -else 
+              .content__box__no-message 投稿がまだありません
           = paginate(@messages)
           = link_to '戻る', "/messages/"
