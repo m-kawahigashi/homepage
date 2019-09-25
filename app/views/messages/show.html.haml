@@ -20,5 +20,6 @@
           -if @comments
             - @comments.each do |comment|
               %p
-                %string= link_to current_user.nickname, "/users/#{comment.user_id}"
+                %string= link_to comment.user.nickname, "/users/#{comment.user_id}"
                 = comment.text
+                .comment_delete#delete= link_to 'コメントを削除', message_comment_path(@messages, comment), method: :delete, data: { confirm: '本当に削除しますか？' }

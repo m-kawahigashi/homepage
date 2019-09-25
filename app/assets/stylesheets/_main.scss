@@ -6,16 +6,14 @@
   width: 100%;
 }
 
-.contents {
+.new-contents {
   width: 100%;
   float: right;
-  height: 875px;
+  height: 380px;
 }
 .none{
   display: none;
   z-index: 5;
-  position: relative;
-  left: 30%;
 }
 
 .search {
@@ -43,7 +41,7 @@
     }
     &__box {
       float: left;
-      height: 730px;
+      // height: 730px;
       width: 100%;
       // border: 1px solid grey;
       margin: 5px;
@@ -111,4 +109,8 @@
   border: 1px solid black;
   width: 90%;
   left: 25px;
+  display: table-footer-group;
+}
+.comment_delete{
+  border-bottom: 1px solid black;
 }

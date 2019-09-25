@@ -15,7 +15,7 @@ $(document).on('turbolinks:load', function(){
                   </div>
                   <div class="content__box-image--text">
                     <p>${message.text}</p>
-                  </divs>
+                  </div>
                   <div class="content__box-btn">
                     <a data-method="get" href="/messages/${message.id}">詳細</a>
                   </div>
