@@ -22,4 +22,4 @@
               %p
                 %string= link_to comment.user.nickname, "/users/#{comment.user_id}"
                 = comment.text
-      
+      .back-btn= link_to '戻る', root_path
